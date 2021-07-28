@@ -1,9 +1,9 @@
 specVersion: 0.0.1
-description: Subquery node for Opportunity testnet
+description: Subquery node for Standard Opportunity testnet
 repository: https://github.com/digitalnativeinc/standard-substrate.git
 schema: ./schema.graphql
 network:
-  endpoint: wss://polkadot.api.onfinality.io/public-ws
+  endpoint: wss://rpc.opportunity.standard.tech
 dataSources:
   - name: main
     kind: substrate/Runtime
