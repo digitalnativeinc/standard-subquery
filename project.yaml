@@ -1,9 +1,32 @@
 specVersion: 0.0.1
-description: Subquery node for Standard Opportunity testnet
-repository: https://github.com/digitalnativeinc/standard-substrate.git
+description: Subquery node for Opportunity Testnet
+repository: https://github.com/digitalnativeinc/standard-subquery
 schema: ./schema.graphql
 network:
-  endpoint: wss://rpc.opportunity.standard.tech
+  endpoint: wss://rpc.opportunity.standard.tech:443
+  dictionary: https://api.subquery.network/sq/subquery/dictionary-polkadot
+  types: {
+      "AccountInfo": "AccountInfoWithTripleRefCount",
+      "Address": "MultiAddress",
+      "LookupSource": "MultiAddress",
+      "XCurrencyId": {
+        "chain_id": "ChainId",
+        "currency_id": "Bytes"
+      },
+      "CurrencyIdOf": "CurrencyId",
+      "CurrencyId": {
+        "_enum": {
+          "Token": "TokenSymbol"
+        }
+      },
+      "TokenSymbol": {
+        "_enum": [
+          "OPT",
+        ]
+      },
+      "AmountOf": "Amount",
+      "Amount": "i128"
+    }
 dataSources:
   - name: main
     kind: substrate/Runtime
